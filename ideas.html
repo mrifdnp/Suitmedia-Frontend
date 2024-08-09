@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="media/logo.png" type="image/x-icon">
+    <script src="script.js"></script>
+    <title>Ideas</title>
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="media/logo.png" alt="Logo" class="logo">
+            <nav class="menu"><ul>
+                <a href="work.html" >Work</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="ideas.html" >Ideas</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </ul>
+               
+            </nav>
+        </div>
+   
+    </header>
+    <main class="container">
+        <div class="content">
+            <div class="banner">
+                <div class="banner-image">
+                    <img src="media/banner.jpg" alt="Banner">
+                </div>
+                <div class="banner-text">
+                    <h1 id="banner-title">Ideas</h1>
+                    <p id="banner-description">Where all our great things begin</p>
+                </div>
+            </div>
+            
+            
+            <div class="filter-bar">
+                <div>
+                    Showing 1 - 10 of 100
+                </div>
+                <div>
+                    Show per page: 
+                    <select id="itemsPerPage">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                    Sort by: 
+                    <select id="sortBy">
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div id="cards-container" class="cards"></div>
+            <div id="pagination" class="pagination"></div>
+        </div>
+    </main>
+
+
+
+</body>
+</html>

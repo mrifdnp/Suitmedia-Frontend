@@ -1,0 +1,237 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f15a24;
+    padding: 0 0;
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    z-index: 1000;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+header.hidden {
+    transform: translateY(-100%);
+}
+header.visible {
+    transform: translateY(0);
+    background-color: rgba(241, 90, 36, 0.7);
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 100px;
+}
+
+.logo {
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu a {
+    position: relative; /* Tambahkan posisi relatif */
+    display: inline-block;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    margin: 0 15px;
+    overflow: hidden; /* Pastikan elemen tidak meluber */
+    transition: transform 0.3s ease;
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Tinggi border */
+    background-color: #ffffff; /* Warna border */
+    transform: scaleX(0); /* Skala X untuk efek animasi */
+    transform-origin: bottom right; /* Titik awal skala */
+    transition: transform 0.5s ease; /* Transisi untuk skala X */
+}
+
+.menu a:hover::before {
+    transform: scaleX(1); /* Skala X menjadi 1 saat hover */
+    transform-origin: bottom left; /* Titik akhir skala */
+}
+
+.menu a.active::before {
+    transform: scaleX(1); /* Border aktif selalu terlihat */
+    transform-origin: bottom left; /* Titik akhir skala */
+    background-color: #ffffff; /* Pastikan warna border sesuai */
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.banner-image {
+    position: absolute;
+    filter: brightness(0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform: skewY(-4.5deg);
+    transform-origin: bottom left;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateY(0);
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+}
+
+.banner-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 150px;
+    transform: translateY(0);
+    transition: transform 0.2s ease-out;
+}
+.banner-text h1 {
+    font-size: 3rem;
+}
+
+.banner-text p {
+    font-size: 1.5rem;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0 100px;
+}
+
+.filter-bar select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 1500px;
+ 
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    gap: 20px;
+    padding: 0 100px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards h2 {
+    font-size: 1em;
+    margin: 0;
+    padding: 5px 15px; /* Padding atas-bawah dan samping */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    line-height: 1.5em; /* Mengatur tinggi baris */
+    max-height: calc(4.5em + 10px); /* Tambahkan padding atas-bawah ke tinggi maksimal */
+    white-space: normal;
+}
+
+.cards p {
+    font-size: 0.85em;
+    padding-left: 15px;
+    text-transform: uppercase;
+    color: gray;
+    margin-bottom: 0;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cards-container {
+    padding: 0 100px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin: 0 0 10px 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.pagination button {
+    color: black;
+    padding: 12px 12px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+.pagination button.active {
+    background-color: #ff6600;
+    color: white;
+    border: 1px solid #ff6600;
+}
+
+.pagination button:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.pagination button.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pagination button:first-child,
+.pagination button:last-child {
+    border-radius: 50%;
+    padding: 12px;
+}
