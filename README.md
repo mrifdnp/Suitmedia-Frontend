@@ -1,1 +1,1 @@
-https://vercel.com/mrifdnps-projects/suitmedia-frontend-rifqi
+[https://suitmedia-frontend-rifqi.vercel.app](https://suitmedia-frontend-rifqi.vercel.app/)
